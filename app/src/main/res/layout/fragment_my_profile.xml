@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/common_bg"
-    android:orientation="vertical"
-    tools:context=".ui.activity.MyProfileFragment"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/common_bg"
+              android:orientation="vertical"
+              tools:context="cn.ucai.live.ui.activity.MyProfileFragment"
     >
 
   <LinearLayout
@@ -136,7 +136,6 @@
             android:textSize="18sp"
             android:textColor="#aa000000"
             />
-
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="wrap_content"
@@ -145,7 +144,6 @@
             android:layout_alignParentRight="true"
             />
     </RelativeLayout>
-
     <RelativeLayout
         android:id="@+id/frame_rate_container"
         android:layout_marginLeft="10dp"
@@ -160,7 +158,6 @@
             android:textSize="18sp"
             android:textColor="#aa000000"
             />
-
         <TextView
             android:id="@+id/frame_rate"
             android:layout_width="wrap_content"

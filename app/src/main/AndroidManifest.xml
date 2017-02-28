@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.easemob.livedemo">
+          package="cn.ucai.live">
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -45,8 +45,8 @@
         </activity>
 
         <activity android:name=".ui.activity.ChatActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"
+                  android:screenOrientation="portrait"
+                  android:launchMode="singleTop"
             />
         <activity
             android:name=".ui.activity.StartLiveActivity"
@@ -60,9 +60,9 @@
             android:name=".ui.activity.RegisterActivity"
             android:parentActivityName=".ui.activity.LoginActivity"
             android:screenOrientation="portrait" />
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.activity.LoginActivity" />
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".ui.activity.LoginActivity" />
         <activity android:name=".ui.activity.SearchActivity"></activity>
 
 
