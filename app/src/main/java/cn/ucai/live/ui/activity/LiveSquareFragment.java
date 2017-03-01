@@ -59,8 +59,7 @@ public class LiveSquareFragment extends Fragment{
     private void setupViewPager(){
         Adapter adapter = new Adapter(getActivity().getSupportFragmentManager());
         adapter.addFragment(new LiveListFragment(), "热门");
-        adapter.addFragment(new LiveListFragment(), "女神");
-        adapter.addFragment(new LiveListFragment(), "男神");
+        adapter.addFragment(new LiveListFragment(), "最新");
         viewPager.setAdapter(adapter);
     }
 
