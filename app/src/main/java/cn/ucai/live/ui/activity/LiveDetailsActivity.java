@@ -1,5 +1,6 @@
 package cn.ucai.live.ui.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.hyphenate.EMValueCallBack;
 import com.hyphenate.chat.EMChatRoom;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.controller.EaseUI;
+import com.hyphenate.easeui.utils.EaseUserUtils;
 import com.ucloud.common.logger.L;
 import com.ucloud.player.widget.v2.UVideoView;
 
@@ -42,14 +44,15 @@ public class LiveDetailsActivity extends LiveBaseActivity implements UVideoView.
         ButterKnife.bind(this);
 
 
-        InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
 
         LiveRoom liveRoom = getIntent().getParcelableExtra("liveroom");
         liveId = liveRoom.getId();
         chatroomId = liveRoom.getChatroomId();
-        int coverRes = liveRoom.getCover();
-        coverView.setImageResource(coverRes);
+        String coverRes = liveRoom.getCover();
+        EaseUserUtils.setAppUserAvatar(LiveDetailsActivity.this,liveRoom.getAnchorId(),coverView);
+//        coverView.setImageResource(coverRes);
 
         anchorId = liveRoom.getAnchorId();
         usernameView.setText(anchorId);

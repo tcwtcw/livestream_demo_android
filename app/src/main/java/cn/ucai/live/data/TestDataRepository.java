@@ -13,8 +13,8 @@ import cn.ucai.live.data.model.LiveRoom;
 public class TestDataRepository {
 
   static int[] covers = new int[] {
-      R.drawable.test1, R.drawable.test2, R.drawable.test3, R.drawable.test4, R.drawable.test5,
-      R.drawable.test6
+          R.drawable.test1, R.drawable.test2, R.drawable.test3, R.drawable.test4, R.drawable.test5,
+          R.drawable.test6
   };
 
   static String[] chatRoomIds = new String[]{"218746635482562996","218747106892972464","218747152489251244","218747179836113332","218747226120257964","218747262707171768"};
@@ -32,7 +32,7 @@ public class TestDataRepository {
       liveRoom.setAudienceNum(new Random().nextInt(2000) + 1);
       liveRoom.setId(liveRoomIds[i-1]);
       liveRoom.setChatroomId(chatRoomIds[i-1]);
-      liveRoom.setCover(covers[i - 1]);
+      liveRoom.setCover("");
       liveRoom.setAnchorId(anchorIds[i-1]);
       roomList.add(liveRoom);
     }
