@@ -82,7 +82,7 @@ public class LiveListFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         chatRoomList = new ArrayList<EMChatRoom>();
         rooms = new ArrayList<EMChatRoom>();
-//        adapter = new LiveAdapter(getContext(),getLiveRoomList(chatRoomList));
+        adapter = new LiveAdapter(getContext(),getLiveRoomList(chatRoomList));
 
         recyclerView = (RecyclerView) getView().findViewById(R.id.recycleview);
 //        footView = getView().inflate(R.layout.em_listview_footer_view, recyclerView, false);
@@ -91,7 +91,7 @@ public class LiveListFragment extends Fragment {
         recyclerView.setLayoutManager(gm);
         recyclerView.setHasFixedSize(true);
         recyclerView.addItemDecoration(new GridMarginDecoration(6));
-//        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);
         mSrl = (SwipeRefreshLayout) getView().findViewById(R.id.srl);
         mTvRefresh = (TextView) getView().findViewById(R.id.tv_refresh);
 
@@ -210,13 +210,14 @@ public class LiveListFragment extends Fragment {
                             if(isFirstLoading){
 //                                pb.setVisibility(View.INVISIBLE);
                                 isFirstLoading = false;
-//                                adapter.initData(getLiveRoomList(chatRoomList));
-                                adapter = new LiveAdapter(getContext(),getLiveRoomList(chatRoomList));
-                                recyclerView.setAdapter(adapter);
+                                adapter.initData(getLiveRoomList(chatRoomList));
+//                                adapter = new LiveAdapter(getContext(),getLiveRoomList(chatRoomList));
+//                                recyclerView.setAdapter(adapter);
 //                                rooms.addAll(chatRooms);
-                            }else{
-                                adapter.notifyDataSetChanged();
+//                            }else{
+
                             }
+                            adapter.notifyDataSetChanged();
                             if(chatRooms.size() < pagesize){
 //                                    L.e(TAG,"No more data");
                                 hasMoreData = false;
@@ -267,7 +268,7 @@ public class LiveListFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        L.e(TAG,"onResume");
+        L.e(TAG,"onResume,"+chatRoomList.size());
     }
 
     static class LiveAdapter extends RecyclerView.Adapter<PhotoViewHolder> {
@@ -293,7 +294,7 @@ public class LiveListFragment extends Fragment {
                     L.e(TAG,"room="+room);
                     if (room.getAnchorId().equals(EMClient.getInstance().getCurrentUser())){
                         context.startActivity(new Intent(context,StartLiveActivity.class)
-                                .putExtra("liveId",room.getId()));
+                                .putExtra("liveroom", liveRoomList.get(position)));
                     }else {
                         context.startActivity(new Intent(context, LiveDetailsActivity.class)
                                 .putExtra("liveroom", liveRoomList.get(position)));
