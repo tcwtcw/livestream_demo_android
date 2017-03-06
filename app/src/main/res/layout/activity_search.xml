@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              android:background="@color/common_bg"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              tools:context="com.easemob.livedemo.cn.easemob.livedemo.ui.activity.SearchActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/common_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.easemob.livedemo.cn.easemob.livedemo.ui.activity.SearchActivity">
 
     <android.support.v7.widget.Toolbar
         style="@style/ToolbarNormal"
@@ -31,22 +31,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
-        <android.support.v7.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/recView"
-            />
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recView"
+        />
 
-        <TextView
-            android:id="@+id/empty_view"
-            android:visibility="invisible"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:text="没有搜索到相关信息"
-            android:textColor="@color/gray_normal"
-            android:layout_marginTop="80dp"
-            android:layout_gravity="center_horizontal"
-            />
+    <TextView
+        android:id="@+id/empty_view"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="没有搜索到相关信息"
+        android:textColor="@color/gray_normal"
+        android:layout_marginTop="80dp"
+        android:layout_gravity="center_horizontal"
+        />
     </FrameLayout>
 </LinearLayout>
