@@ -62,7 +62,7 @@ public class MyProfileFragment extends Fragment {
         //
         //spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
         //    @Override
-        //    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        //    public void onItemSelected(AdapterView<?> parent, View loadingView, int position, long id) {
         //        liveSettings.setVideoEncodingBitRate(Integer.parseInt(bitrateArr[position]));
         //    }
         //
@@ -116,5 +116,10 @@ public class MyProfileFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+    @OnClick(R.id.layout_change)
+    public void myChange(){
+        MFGT.gotoChange(getActivity());
     }
 }
